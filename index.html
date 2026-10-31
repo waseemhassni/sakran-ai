@@ -431,6 +431,26 @@
       body.dark .pfpop{background:#0F1830}
       body.dark input[type=text]{background:#0F1830;color:var(--ink)}
       @media print{body *{visibility:hidden}.cert-modal,.cert-modal *{visibility:visible}.cert-modal{position:absolute;inset:0 auto auto 0;background:none}.cert-modal .no-print{display:none !important}}
+    
+      /* ---------- Autumn scene: trees, falling leaves, visiting birds ---------- */
+      .hero{overflow:hidden}
+      .title-scene{position:relative}
+      .title-scene h1{position:relative;z-index:1}
+      .tree{position:absolute;top:50%;width:112px;z-index:0;animation:sway 5.5s ease-in-out infinite alternate;transform-origin:50% 100%;pointer-events:none}
+      .tree.left{left:0}
+      .tree.right{right:0}
+      @keyframes sway{from{transform:translateY(-50%) rotate(-1.6deg)}to{transform:translateY(-50%) rotate(1.6deg)}}
+      .leaves{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+      .leaf{position:absolute;top:-32px;animation:leafFall linear infinite;opacity:0}
+      @keyframes leafFall{0%{top:-32px;transform:translateX(0) rotate(0deg);opacity:0}8%{opacity:1}92%{opacity:1}100%{top:104%;transform:translateX(var(--sway,30px)) rotate(340deg);opacity:0}}
+      .bird{position:absolute;width:44px;z-index:2;pointer-events:none;color:var(--ink);opacity:0;transition:left 2.6s ease-in-out,top 2.6s ease-in-out,opacity .6s}
+      .bird .wing{transform-box:fill-box;transform-origin:center;animation:flap .45s ease-in-out infinite alternate}
+      @keyframes flap{from{transform:rotate(0deg) scaleY(1)}to{transform:rotate(-30deg) scaleY(.6)}}
+      .bird.flip svg{transform:scaleX(-1)}
+      .bird.perched .wing{animation:none;transform:rotate(14deg) scaleY(.8)}
+      .bird.bob{animation:bob 1.3s ease-in-out infinite}
+      @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+      @media(max-width:600px){.tree{width:62px}.bird{width:34px}.leaf{font-size:16px}}
     </style>
   </head>
   <body>
@@ -438,13 +458,20 @@
 
       <!-- HERO -->
       <header class="hero">
+        <div class="leaves" aria-hidden="true"><span class="leaf" style="left:4%;font-size:20px;animation-duration:9s;animation-delay:0s;--sway:40px">🍁</span><span class="leaf" style="left:12%;font-size:22px;animation-duration:12s;animation-delay:3s;--sway:-35px">🍂</span><span class="leaf" style="left:22%;font-size:18px;animation-duration:8s;animation-delay:1s;--sway:55px">🍁</span><span class="leaf" style="left:33%;font-size:24px;animation-duration:11s;animation-delay:5s;--sway:-45px">🍂</span><span class="leaf" style="left:47%;font-size:20px;animation-duration:10s;animation-delay:2s;--sway:30px">🍁</span><span class="leaf" style="left:58%;font-size:18px;animation-duration:13s;animation-delay:7s;--sway:-50px">🍂</span><span class="leaf" style="left:69%;font-size:22px;animation-duration:9s;animation-delay:4s;--sway:45px">🍁</span><span class="leaf" style="left:79%;font-size:20px;animation-duration:12s;animation-delay:6s;--sway:-30px">🍂</span><span class="leaf" style="left:88%;font-size:24px;animation-duration:8s;animation-delay:8s;--sway:60px">🍁</span><span class="leaf" style="left:95%;font-size:18px;animation-duration:11s;animation-delay:2.5s;--sway:-40px">🍂</span></div>
+        <div class="bird" id="bird1" aria-hidden="true"><svg viewBox="0 0 48 32" width="100%" aria-hidden="true"><path d="M3 19 L12 15 L12 22 Z" fill="currentColor"/><ellipse cx="24" cy="18" rx="13" ry="8" fill="currentColor"/><circle cx="34" cy="12" r="6" fill="currentColor"/><path d="M40 12 L46 14 L40 16 Z" fill="#F39C12"/><circle cx="36" cy="11" r="1.8" fill="#fff"/><path class="wing" d="M17 14 Q24 5 31 14 Q24 19 17 14 Z" fill="currentColor" opacity=".7"/></svg></div>
+        <div class="bird flip" id="bird2" aria-hidden="true"><svg viewBox="0 0 48 32" width="100%" aria-hidden="true"><path d="M3 19 L12 15 L12 22 Z" fill="currentColor"/><ellipse cx="24" cy="18" rx="13" ry="8" fill="currentColor"/><circle cx="34" cy="12" r="6" fill="currentColor"/><path d="M40 12 L46 14 L40 16 Z" fill="#F39C12"/><circle cx="36" cy="11" r="1.8" fill="#fff"/><path class="wing" d="M17 14 Q24 5 31 14 Q24 19 17 14 Z" fill="currentColor" opacity=".7"/></svg></div>
         <div class="lang-switch" role="group" aria-label="Language / زبان">
           <button type="button" class="lang-btn is-active" data-setlang="ur" aria-pressed="true">اردو</button>
           <button type="button" class="lang-btn" data-setlang="en" aria-pressed="false">English</button>
           <button type="button" id="themeToggle" aria-pressed="false">🌙 ڈارک موڈ</button>
         </div>
         <span class="hero-badge">FREE AI</span>
-        <h1><span class="w-sak">Sakran</span> <span class="w-ai">AI</span></h1>
+        <div class="title-scene">
+          <div class="tree left" aria-hidden="true"><svg viewBox="0 0 100 130" width="100%" aria-hidden="true"><path d="M46 130 L48 78 L52 78 L54 130 Z" fill="#7B4A2B"/><path d="M50 80 L30 58 M50 80 L70 58" stroke="#7B4A2B" stroke-width="5" stroke-linecap="round" fill="none"/><circle cx="50" cy="52" r="27" fill="#E67E22"/><circle cx="29" cy="68" r="19" fill="#D35400"/><circle cx="71" cy="68" r="19" fill="#F39C12"/><circle cx="50" cy="32" r="17" fill="#C0392B"/><circle cx="34" cy="44" r="13" fill="#F5B041"/><circle cx="66" cy="44" r="13" fill="#935116"/></svg></div>
+          <h1><span class="w-sak">Sakran</span> <span class="w-ai">AI</span></h1>
+          <div class="tree right" aria-hidden="true"><svg viewBox="0 0 100 130" width="100%" aria-hidden="true"><path d="M46 130 L48 78 L52 78 L54 130 Z" fill="#7B4A2B"/><path d="M50 80 L30 58 M50 80 L70 58" stroke="#7B4A2B" stroke-width="5" stroke-linecap="round" fill="none"/><circle cx="50" cy="52" r="27" fill="#E67E22"/><circle cx="29" cy="68" r="19" fill="#D35400"/><circle cx="71" cy="68" r="19" fill="#F39C12"/><circle cx="50" cy="32" r="17" fill="#C0392B"/><circle cx="34" cy="44" r="13" fill="#F5B041"/><circle cx="66" cy="44" r="13" fill="#935116"/></svg></div>
+        </div>
         <div class="rainbow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <p class="tag" data-i18n="hero_tag">اردو میں AI سیکھو — قدم بہ قدم، کھیل کھیل میں!</p>
         <p class="sub" data-i18n="hero_sub">یہ ساکران کے سب لوگوں کے لیے ہے۔ یہاں تم سیکھو گے: AI کیا ہے، اس سے بات کیسے کرتے ہیں، تصویر کیسے بناتے ہیں، اور آخر میں اپنی اینیمیشن اور ویڈیو کیسے بناتے ہیں۔</p>
@@ -1690,6 +1717,49 @@
       if (certClose) certClose.addEventListener('click', function () { if (certModal) certModal.hidden = true; });
       if (certModal) certModal.addEventListener('click', function (ev) { if (ev.target === certModal) certModal.hidden = true; });
       updateCerts();
+
+
+      // ---------- Autumn scene: birds that visit, perch, and fly away ----------
+      (function () {
+        var hero = document.querySelector('.hero');
+        if (!hero) return;
+        function visit(bird, treeSel, fromLeft, firstWait) {
+          var tree = document.querySelector(treeSel);
+          if (!bird || !tree) return;
+          function perchPos() {
+            var h = hero.getBoundingClientRect(), t = tree.getBoundingClientRect();
+            return { x: t.left - h.left + t.width / 2 - bird.offsetWidth / 2, y: t.top - h.top + 2 };
+          }
+          function setPos(x, y, animate) {
+            bird.style.transition = animate ? '' : 'none';
+            bird.style.left = x + 'px';
+            bird.style.top = y + 'px';
+          }
+          function cycle() {
+            var p = perchPos();
+            var W = hero.offsetWidth;
+            setPos(fromLeft ? -60 : W + 20, p.y - 150, false);
+            bird.style.opacity = '1';
+            bird.classList.remove('perched', 'bob');
+            void bird.offsetWidth;
+            setTimeout(function () { setPos(p.x, p.y, true); }, 60);
+            setTimeout(function () {
+              bird.classList.add('perched', 'bob');
+              setTimeout(function () {
+                bird.classList.remove('perched', 'bob');
+                setPos(fromLeft ? W + 20 : -60, p.y - 170, true);
+                setTimeout(function () {
+                  bird.style.opacity = '0';
+                  setTimeout(cycle, 12000 + Math.random() * 14000);
+                }, 2600);
+              }, 4500 + Math.random() * 3000);
+            }, 2900);
+          }
+          setTimeout(cycle, firstWait);
+        }
+        visit(document.getElementById('bird1'), '.tree.left', true, 5000);
+        visit(document.getElementById('bird2'), '.tree.right', false, 12000);
+      })();
 
       renderQuiz();
       applyLang(curLang);
