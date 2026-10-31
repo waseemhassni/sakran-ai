@@ -406,9 +406,9 @@
       .cert-box{background:var(--bg);border-radius:var(--radius);box-shadow:var(--sh-out);padding:14px 20px 18px;margin-top:14px;text-align:center}
       .cert-box p{margin:0 0 8px;font-size:17.5px}
       .cert-btn{font:inherit;font-weight:700;font-size:18px;cursor:pointer;background:var(--coral);color:#fff;border:none;border-radius:99px;padding:8px 26px 12px;box-shadow:var(--sh-out-sm)}
-      .cert-modal{position:fixed;inset:0;background:rgba(10,20,40,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:18px}
+      .cert-modal{position:fixed;inset:0;background:rgba(10,20,40,.55);display:flex;overflow-y:auto;z-index:50;padding:18px}
       .cert-modal[hidden]{display:none}
-      .cert-card{background:#fff;border:4px solid #0F2A5C;outline:2px solid #C9A227;outline-offset:6px;border-radius:4px;padding:26px 26px 20px;max-width:660px;width:100%;text-align:center}
+      .cert-card{background:#fff;border:4px solid #0F2A5C;outline:2px solid #C9A227;outline-offset:6px;border-radius:4px;padding:26px 26px 20px;max-width:660px;width:100%;text-align:center;margin:auto}
       .cert-top{display:flex;justify-content:space-between;align-items:flex-start}
       .cert-top .ct-word{font-weight:800;font-size:28px;color:#0F2A5C}
       .cert-sq{display:flex;gap:6px;align-items:flex-start}.cert-sq i{display:block;width:16px;height:16px;background:#C9A227}.cert-sq i:nth-child(2){width:22px;height:22px;margin-top:-3px;background:#0F2A5C}
@@ -1046,7 +1046,7 @@
       </section>
 
       <div class="cert-modal" id="certModal" hidden>
-        <div class="cert-card">
+        <div class="cert-card" dir="ltr">
           <div class="cert-top"><span class="ct-word">Sakran AI</span><span class="cert-sq"><i></i><i></i><i></i></span></div>
           <h3>CERTIFICATE OF ACHIEVEMENT</h3>
           <p class="cert-award">This certificate is proudly presented to</p>
