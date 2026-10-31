@@ -386,28 +386,62 @@
       .news-title{font-size:17px; font-weight:700; line-height:1.9;}
       .news-empty{color:var(--ink-soft); font-size:17px;}
     
-      /* ---------- Language switch + neon hero ---------- */
+      /* ---------- Language switch + shining title ---------- */
       .lang-switch{display:flex;gap:8px;justify-content:center;margin:2px 0 14px}
       .lang-switch button{font:inherit;font-weight:700;padding:7px 18px;border-radius:99px;border:2px solid var(--ind);background:transparent;color:var(--fg);cursor:pointer;margin:0}
       .lang-switch button.is-active{background:var(--ind);color:#fff}
-      .hero h1 .w-sak,.hero h1 .w-ai{background:linear-gradient(90deg,#0f2a5c,#00b4d8,#22c55e,#00b4d8,#0f2a5c);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:neonShift 5s linear infinite;filter:drop-shadow(0 0 7px rgba(0,180,216,.55)) drop-shadow(0 0 20px rgba(34,197,94,.35))}
-      @keyframes neonShift{to{background-position:220% center}}
-      .neon-side{position:absolute;top:8px;bottom:8px;width:9px;border-radius:99px;background:linear-gradient(180deg,#00e5ff,#22c55e,#7c3aed,#00e5ff);background-size:100% 220%;box-shadow:0 0 12px rgba(0,229,255,.8),0 0 26px rgba(34,197,94,.55);animation:neonSide 4s ease-in-out infinite}
-      .neon-side.left{left:6px}.neon-side.right{right:6px}
-      @keyframes neonSide{0%,100%{opacity:.85;background-position:0 0}50%{opacity:1;background-position:0 100%}}
-      @media(max-width:600px){.neon-side{width:6px}}
-</style>
+      .hero h1 .w-sak,.hero h1 .w-ai{background:linear-gradient(110deg,#0f2a5c 42%,#f6b73c 50%,#0f2a5c 58%);background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shineMove 3.2s linear infinite;filter:drop-shadow(0 0 10px rgba(246,183,60,.35))}
+      @keyframes shineMove{to{background-position:250% center}}
+
+      /* ---------- Search + tip + certificates + parents + dark mode ---------- */
+      :root{--ind:#0F2A5C}
+      .search-card{background:var(--bg);border-radius:var(--radius);box-shadow:var(--sh-out);padding:16px 20px;margin:18px 0 8px}
+      .search-card input[type=text]{width:100%;font:inherit;font-size:18px;padding:10px 16px 12px;border-radius:99px;border:2px solid var(--line);background:#fff;color:var(--ink);outline:none}
+      .search-card input[type=text]:focus{border-color:var(--coral)}
+      #searchClear{margin-top:10px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;background:var(--bg);color:var(--coral-dark);border:none;border-radius:99px;padding:6px 22px 9px;box-shadow:var(--sh-out-sm)}
+      .search-note{color:var(--ink-soft);font-size:16px;margin:8px 0 0}
+      .tip-card{background:var(--bg);border-radius:var(--radius);box-shadow:var(--sh-out);padding:16px 20px;margin:22px 0 8px}
+      .tip-card b{font-size:18px}
+      .tip-card p{margin:4px 0 0;font-size:17.5px}
+      .cert-box{background:var(--bg);border-radius:var(--radius);box-shadow:var(--sh-out);padding:14px 20px 18px;margin-top:14px;text-align:center}
+      .cert-box p{margin:0 0 8px;font-size:17.5px}
+      .cert-btn{font:inherit;font-weight:700;font-size:18px;cursor:pointer;background:var(--coral);color:#fff;border:none;border-radius:99px;padding:8px 26px 12px;box-shadow:var(--sh-out-sm)}
+      .cert-modal{position:fixed;inset:0;background:rgba(10,20,40,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:18px}
+      .cert-modal[hidden]{display:none}
+      .cert-card{background:var(--bg);border-radius:26px;border:3px solid var(--coral);padding:26px 22px;max-width:540px;width:100%;text-align:center;box-shadow:var(--sh-out)}
+      .cert-top{font-weight:800;font-size:30px;color:var(--coral-dark)}
+      .cert-card h3{margin:2px 0 6px;font-size:22px}
+      .cert-award{margin:0;font-size:17px;color:var(--ink-soft)}
+      .cert-name{font-size:27px;font-weight:800;color:var(--coral-dark);margin:6px 0}
+      .cert-card input[type=text]{width:100%;font:inherit;font-size:18px;text-align:center;padding:9px 14px 11px;border-radius:99px;border:2px solid var(--line);background:#fff;color:var(--ink)}
+      .cert-level,.cert-date{margin:6px 0 0;font-size:17px}
+      .cert-sign{margin:14px 0 0;font-weight:700;color:var(--coral-dark)}
+      .cert-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+      .cert-actions button{font:inherit;font-weight:700;font-size:17px;cursor:pointer;border:none;border-radius:99px;padding:8px 24px 11px;box-shadow:var(--sh-out-sm)}
+      #certPrint{background:var(--coral);color:#fff}
+      #certClose{background:var(--bg);color:var(--coral-dark)}
+      .parents{background:var(--bg);border-radius:var(--radius);box-shadow:var(--sh-out);padding:20px 22px 22px;margin-top:22px}
+      .parents h2{margin:0;font-size:clamp(23px,5vw,31px);line-height:2;color:var(--coral-dark)}
+      .parents ul{margin:10px 0 0;padding-right:22px}
+      .parents li{font-size:18px;margin-bottom:2px}
+      .btn-wa{background:#25D366;color:#fff;box-shadow:var(--sh-out-sm)}
+      .btn-wa:active{transform:translateY(1px);box-shadow:var(--sh-in-sm)}
+      body.dark{--bg:#0A1120;--surface:#111B2E;--ink:#E6EDF7;--ink-soft:#9FB0C8;--line:#26334D;--ind:#3B82F6;--coral:#3B82F6;--coral-dark:#93C5FD;--orange:#FB923C;--orange-dark:#FDBA74;--teal:#38BDF8;--teal-dark:#7DD3FC;--violet:#A78BFA;--violet-dark:#C4B5FD;--blue:#60A5FA;--blue-dark:#93C5FD;--sun:#FCD34D;--sun-dark:#FDE68A;--sh-out:9px 9px 18px #05080F,-9px -9px 18px #1B2740;--sh-out-sm:6px 6px 12px #05080F,-6px -6px 12px #1B2740;--sh-in:inset 6px 6px 12px #05080F,inset -6px -6px 12px #1B2740;--sh-in-sm:inset 4px 4px 8px #05080F,inset -4px -4px 8px #1B2740;--p1:#1A2740;--p2:#232838;--p3:#1A2740;--p4:#232838;--p5:#1A2740;--good-bg:#14301C;--bad-bg:#3A1F1A;--hero-img-bg:#111B2E}
+      body.dark .hero h1 .w-sak,body.dark .hero h1 .w-ai{background:linear-gradient(110deg,#dbeafe 42%,#f6b73c 50%,#dbeafe 58%);background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shineMove 3.2s linear infinite;filter:drop-shadow(0 0 12px rgba(246,183,60,.5))}
+      body.dark .pfpop{background:#0F1830}
+      body.dark input[type=text]{background:#0F1830;color:var(--ink)}
+      @media print{body *{visibility:hidden}.cert-modal,.cert-modal *{visibility:visible}.cert-modal{position:absolute;inset:0 auto auto 0;background:none}.cert-modal .no-print{display:none !important}}
+    </style>
   </head>
   <body>
     <div class="wrap">
 
       <!-- HERO -->
       <header class="hero">
-        <div class="neon-side left" aria-hidden="true"></div>
-        <div class="neon-side right" aria-hidden="true"></div>
         <div class="lang-switch" role="group" aria-label="Language / زبان">
           <button type="button" class="lang-btn is-active" data-setlang="ur" aria-pressed="true">اردو</button>
           <button type="button" class="lang-btn" data-setlang="en" aria-pressed="false">English</button>
+          <button type="button" id="themeToggle" aria-pressed="false">🌙 ڈارک موڈ</button>
         </div>
         <span class="hero-badge">FREE AI</span>
         <h1><span class="w-sak">Sakran</span> <span class="w-ai">AI</span></h1>
@@ -420,12 +454,19 @@
         <div class="hero-cta">
           <a class="btn btn-start" href="#level1" data-i18n="cta_start">سیکھنا شروع کرو</a>
           <a class="btn btn-map" href="#roadmap" data-i18n="cta_map">سارا راستہ دیکھو</a>
+          <a class="btn btn-wa" id="waShare" href="https://wa.me/?text=" target="_blank" rel="noopener" data-i18n="wa_btn">WhatsApp پر شیئر کرو</a>
+          <a class="btn btn-map" href="#parents" data-i18n="par_cta">والدین کے لیے</a>
         </div>
         <div class="fs-row">
           <span class="fs-label" data-i18n="fs_label">پڑھنے میں مشکل ہو رہی ہے؟</span>
           <button class="fs-btn" id="fsToggle" type="button" aria-pressed="false">حروف بڑے کرو</button>
         </div>
       </header>
+
+      <section class="tip-card">
+        <b data-i18n="tip_title">آج کا AI ٹپ 💡</b>
+        <p id="tipText"></p>
+      </section>
 
       <!-- PROGRESS -->
       <section class="progress-card" aria-label="میری پیش رفت">
@@ -435,6 +476,12 @@
         </div>
         <div class="bar"><div class="bar-fill" id="barFill"></div></div>
         <div class="progress-note" id="progressNote">ہر سبق کھول کر پڑھو، مشق کرو، پھر «میں نے سیکھ لیا» دباؤ — ستارے بڑھتے جائیں گے!</div>
+      </section>
+
+      <section class="search-card">
+        <input type="text" id="searchInput" autocomplete="off">
+        <button type="button" id="searchClear" data-i18n="search_clear">صاف کرو</button>
+        <p class="search-note" id="searchNote"></p>
       </section>
 
       <!-- ROADMAP -->
@@ -475,12 +522,12 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li><b>AI</b> کا مطلب ہے «مصنوعی ذہانت»۔</li>
-              <li>یہ ایک کمپیوٹر پروگرام ہے جو انسانوں کی بات <b>سمجھتا</b> ہے اور <b>جواب</b> دیتا ہے۔</li>
-              <li>اس نے لاکھوں کتابیں اور ویب سائٹس پڑھ کر سیکھا ہے، اس لیے یہ بہت کچھ جانتا ہے۔</li>
-              <li>لیکن یاد رکھو: AI انسان <b>نہیں</b> ہے۔ اس کے پاس دل نہیں، اور یہ کبھی کبھی <b>غلطی</b> بھی کر سکتا ہے۔</li>
+              <li data-i18n-html="b001"><b>AI</b> کا مطلب ہے «مصنوعی ذہانت»۔</li>
+              <li data-i18n-html="b002">یہ ایک کمپیوٹر پروگرام ہے جو انسانوں کی بات <b>سمجھتا</b> ہے اور <b>جواب</b> دیتا ہے۔</li>
+              <li data-i18n-html="b003">اس نے لاکھوں کتابیں اور ویب سائٹس پڑھ کر سیکھا ہے، اس لیے یہ بہت کچھ جانتا ہے۔</li>
+              <li data-i18n-html="b004">لیکن یاد رکھو: AI انسان <b>نہیں</b> ہے۔ اس کے پاس دل نہیں، اور یہ کبھی کبھی <b>غلطی</b> بھی کر سکتا ہے۔</li>
             </ul>
-            <div class="practice p1"><b>مشق</b>گھر والوں کو اپنی زبان میں بتاؤ کہ AI کیا ہوتا ہے — جیسے تم استاد بن گئے ہو!</div>
+            <div class="practice p1" data-i18n-html="b005"><b>مشق</b>گھر والوں کو اپنی زبان میں بتاؤ کہ AI کیا ہوتا ہے — جیسے تم استاد بن گئے ہو!</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -494,17 +541,17 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>فون پر <b>ChatGPT</b> یا <b>Gemini</b> جیسی کوئی AI ایپ کھولو۔</li>
-              <li>نیچے لکھنے والی جگہ میں اپنا سوال لکھو اور بھیج دو — بس! یہی بات چیت کی شروعات ہے۔</li>
-              <li>جو بات تم AI کو لکھ کر دیتے ہو، اسے <b>«پرامپٹ»</b> کہتے ہیں۔</li>
-              <li>ادب سے لکھو یا مزے سے — AI ہر انداز میں جواب دیتا ہے۔</li>
+              <li data-i18n-html="b006">فون پر <b>ChatGPT</b> یا <b>Gemini</b> جیسی کوئی AI ایپ کھولو۔</li>
+              <li data-i18n-html="b007">نیچے لکھنے والی جگہ میں اپنا سوال لکھو اور بھیج دو — بس! یہی بات چیت کی شروعات ہے۔</li>
+              <li data-i18n-html="b008">جو بات تم AI کو لکھ کر دیتے ہو، اسے <b>«پرامپٹ»</b> کہتے ہیں۔</li>
+              <li data-i18n-html="b009">ادب سے لکھو یا مزے سے — AI ہر انداز میں جواب دیتا ہے۔</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Assalam o Alaikum! Mujhe aasan Urdu mein batao ke chaand raat ko kyun chamakta hai?</p>
+              <p class="prompt-text" data-i18n="b011">Assalam o Alaikum! Mujhe aasan Urdu mein batao ke chaand raat ko kyun chamakta hai?</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p1"><b>مشق</b>یہی پرامپٹ AI کو بھیجو، پھر ایک اور سوال خود بنا کر پوچھو — مثلاً اپنے پسندیدہ پھل کے بارے میں۔</div>
+            <div class="practice p1" data-i18n-html="b010"><b>مشق</b>یہی پرامپٹ AI کو بھیجو، پھر ایک اور سوال خود بنا کر پوچھو — مثلاً اپنے پسندیدہ پھل کے بارے میں۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -518,20 +565,24 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li><b>کہانی اور نظم</b> لکھ سکتا ہے — بس موضوع بتا دو۔</li>
-              <li><b>ہوم ورک سمجھا</b> سکتا ہے — مشکل سوال کو آسان لفظوں میں۔</li>
-              <li><b>ترجمہ</b> کر سکتا ہے — اردو سے انگریزی، انگریزی سے اردو۔</li>
-              <li><b>تصویر</b> بھی بنا سکتا ہے — یہ تم قدم ۳ میں سیکھو گے!</li>
+              <li data-i18n-html="b012"><b>کہانی اور نظم</b> لکھ سکتا ہے — بس موضوع بتا دو۔</li>
+              <li data-i18n-html="b013"><b>ہوم ورک سمجھا</b> سکتا ہے — مشکل سوال کو آسان لفظوں میں۔</li>
+              <li data-i18n-html="b014"><b>ترجمہ</b> کر سکتا ہے — اردو سے انگریزی، انگریزی سے اردو۔</li>
+              <li data-i18n-html="b015"><b>تصویر</b> بھی بنا سکتا ہے — یہ تم قدم ۳ میں سیکھو گے!</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Mere gaon Sakran ke bare mein 4 line ki khoobsurat si nazam likho, jisme chiku aur aam ke bagh bhi hon.</p>
+              <p class="prompt-text" data-i18n="b017">Mere gaon Sakran ke bare mein 4 line ki khoobsurat si nazam likho, jisme chiku aur aam ke bagh bhi hon.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p1"><b>مشق</b>AI سے اپنے گاؤں پر نظم لکھواؤ اور اسے اپنی کاپی میں صاف لکھ کر استاد کو دکھاؤ۔</div>
+            <div class="practice p1" data-i18n-html="b016"><b>مشق</b>AI سے اپنے گاؤں پر نظم لکھواؤ اور اسے اپنی کاپی میں صاف لکھ کر استاد کو دکھاؤ۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
+        <div class="cert-box" id="certBox1" hidden>
+          <p data-i18n="cert_note">شاباش! اس لیول کے سارے سبق مکمل — اپنا سرٹیفکیٹ لو!</p>
+          <button class="cert-btn" type="button" data-cert="1" data-i18n="cert_btn">سرٹیفکیٹ دیکھو</button>
+        </div>
       </section>
 
       <!-- LEVEL 2 -->
@@ -553,11 +604,11 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li><b>کمزور پرامپٹ:</b> «کہانی لکھو» — AI سمجھ نہیں پائے گا کہ کیسی کہانی چاہیے۔</li>
-              <li><b>مضبوط پرامپٹ:</b> «ایک چھوٹے سے پرندے کی مزے دار کہانی لکھو جو اڑنا سیکھ رہا ہے، آسان اردو میں، صرف ۵ جملے۔»</li>
-              <li>فرق دیکھا؟ مضبوط پرامپٹ میں <b>موضوع + انداز + لمبائی</b> سب صاف ہے۔</li>
+              <li data-i18n-html="b018"><b>کمزور پرامپٹ:</b> «کہانی لکھو» — AI سمجھ نہیں پائے گا کہ کیسی کہانی چاہیے۔</li>
+              <li data-i18n-html="b019"><b>مضبوط پرامپٹ:</b> «ایک چھوٹے سے پرندے کی مزے دار کہانی لکھو جو اڑنا سیکھ رہا ہے، آسان اردو میں، صرف ۵ جملے۔»</li>
+              <li data-i18n-html="b020">فرق دیکھا؟ مضبوط پرامپٹ میں <b>موضوع + انداز + لمبائی</b> سب صاف ہے۔</li>
             </ul>
-            <div class="practice p2"><b>مشق</b>«نظم لکھو» والے کمزور پرامپٹ کو خود مضبوط بنا کر لکھو، پھر AI کو بھیج کر نتیجہ دیکھو۔</div>
+            <div class="practice p2" data-i18n-html="b021"><b>مشق</b>«نظم لکھو» والے کمزور پرامپٹ کو خود مضبوط بنا کر لکھو، پھر AI کو بھیج کر نتیجہ دیکھو۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -571,17 +622,17 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li><b>کون:</b> AI کو کوئی کردار دو — «تم ایک استاد ہو…»</li>
-              <li><b>کیا:</b> کام صاف بتاؤ — «…مجھے پانی کا چکر سمجھاؤ…»</li>
-              <li><b>کیسا:</b> انداز بتاؤ — «…بہت آسان اردو میں، مثالوں کے ساتھ، جیسے میں بالکل نیا سیکھنے والا ہوں۔»</li>
-              <li>یہ تین چیزیں مل جائیں تو جواب ہمیشہ شاندار آتا ہے۔</li>
+              <li data-i18n-html="b022"><b>کون:</b> AI کو کوئی کردار دو — «تم ایک استاد ہو…»</li>
+              <li data-i18n-html="b023"><b>کیا:</b> کام صاف بتاؤ — «…مجھے پانی کا چکر سمجھاؤ…»</li>
+              <li data-i18n-html="b024"><b>کیسا:</b> انداز بتاؤ — «…بہت آسان اردو میں، مثالوں کے ساتھ، جیسے میں بالکل نیا سیکھنے والا ہوں۔»</li>
+              <li data-i18n-html="b025">یہ تین چیزیں مل جائیں تو جواب ہمیشہ شاندار آتا ہے۔</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Tum ek ustaad ho. Mujhe ek naye seekhne wale ke liye pani ke cycle ko boht aasan Urdu mein samjhao, roz ki misalon ke sath.</p>
+              <p class="prompt-text" data-i18n="b027">Tum ek ustaad ho. Mujhe ek naye seekhne wale ke liye pani ke cycle ko boht aasan Urdu mein samjhao, roz ki misalon ke sath.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p2"><b>مشق</b>اسی فارمولے سے اپنا ایک پرامپٹ بناؤ — کردار «شاعر» رکھ کر اپنے اسکول پر نظم لکھواؤ۔</div>
+            <div class="practice p2" data-i18n-html="b026"><b>مشق</b>اسی فارمولے سے اپنا ایک پرامپٹ بناؤ — کردار «شاعر» رکھ کر اپنے اسکول پر نظم لکھواؤ۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -595,19 +646,23 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>گھبرانے کی ضرورت نہیں — بس آگے لکھ دو: <b>«اور آسان کر کے بتاؤ»</b> یا <b>«اور چھوٹا کر دو»</b>۔</li>
-              <li>جواب غلط لگے تو <b>دوبارہ پوچھو</b>، یا استاد اور کتاب سے ملا کر دیکھو۔</li>
-              <li>AI سے بات چیت چلتی رہتی ہے — ایک ہی بات کو کئی بار بہتر کروا سکتے ہو۔</li>
+              <li data-i18n-html="b028">گھبرانے کی ضرورت نہیں — بس آگے لکھ دو: <b>«اور آسان کر کے بتاؤ»</b> یا <b>«اور چھوٹا کر دو»</b>۔</li>
+              <li data-i18n-html="b029">جواب غلط لگے تو <b>دوبارہ پوچھو</b>، یا استاد اور کتاب سے ملا کر دیکھو۔</li>
+              <li data-i18n-html="b030">AI سے بات چیت چلتی رہتی ہے — ایک ہی بات کو کئی بار بہتر کروا سکتے ہو۔</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Ye jawab mujhe mushkil laga. Isi ko aur aasan lafzon mein, ek chhoti si misal ke sath dobara samjhao.</p>
+              <p class="prompt-text" data-i18n="b032">Ye jawab mujhe mushkil laga. Isi ko aur aasan lafzon mein, ek chhoti si misal ke sath dobara samjhao.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p2"><b>مشق</b>کسی بھی جواب کو تین بار «اور آسان» کہہ کر دیکھو کہ وہ کتنا سادہ ہو جاتا ہے۔</div>
+            <div class="practice p2" data-i18n-html="b031"><b>مشق</b>کسی بھی جواب کو تین بار «اور آسان» کہہ کر دیکھو کہ وہ کتنا سادہ ہو جاتا ہے۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
+        <div class="cert-box" id="certBox2" hidden>
+          <p data-i18n="cert_note">شاباش! اس لیول کے سارے سبق مکمل — اپنا سرٹیفکیٹ لو!</p>
+          <button class="cert-btn" type="button" data-cert="2" data-i18n="cert_btn">سرٹیفکیٹ دیکھو</button>
+        </div>
       </section>
 
       <!-- LEVEL 3 -->
@@ -630,16 +685,16 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>تصویر کے پرامپٹ میں <b>چار چیزیں</b> بتاؤ: کیا چیز ہے، کہاں ہے، کون سے رنگ، اور کون سا انداز (کارٹون یا اصلی جیسی)۔</li>
-              <li>جتنی زیادہ تفصیل، اتنی خوبصورت تصویر۔</li>
-              <li>تصویر بنانے والے اوزار: <b>ChatGPT، Gemini</b> اور <b>Microsoft Image Creator</b> — کئی مفت ہیں۔</li>
+              <li data-i18n-html="b033">تصویر کے پرامپٹ میں <b>چار چیزیں</b> بتاؤ: کیا چیز ہے، کہاں ہے، کون سے رنگ، اور کون سا انداز (کارٹون یا اصلی جیسی)۔</li>
+              <li data-i18n-html="b034">جتنی زیادہ تفصیل، اتنی خوبصورت تصویر۔</li>
+              <li data-i18n-html="b035">تصویر بنانے والے اوزار: <b>ChatGPT، Gemini</b> اور <b>Microsoft Image Creator</b> — کئی مفت ہیں۔</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Ek khoobsurat bagh ki tasveer banao jisme aam ke darakht, behti hui nehar aur rang birangay phool hon, cartoon style, roshan aur khush rang.</p>
+              <p class="prompt-text" data-i18n="b037">Ek khoobsurat bagh ki tasveer banao jisme aam ke darakht, behti hui nehar aur rang birangay phool hon, cartoon style, roshan aur khush rang.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p3"><b>مشق</b>یہی پرامپٹ استعمال کرو، پھر اس میں ایک چیز بدل کر (مثلاً «رات کا منظر») نئی تصویر بناؤ۔</div>
+            <div class="practice p3" data-i18n-html="b036"><b>مشق</b>یہی پرامپٹ استعمال کرو، پھر اس میں ایک چیز بدل کر (مثلاً «رات کا منظر») نئی تصویر بناؤ۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -653,15 +708,15 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>اپنے آس پاس کی چیزوں کو پرامپٹ میں ڈالو: <b>چیکو اور آم کے باغ، نہر، سرسبز کھیت</b>۔</li>
-              <li>ایسی تصویریں سب کو پسند آتی ہیں کیونکہ یہ <b>ہماری اپنی</b> دنیا ہوتی ہے۔</li>
+              <li data-i18n-html="b038">اپنے آس پاس کی چیزوں کو پرامپٹ میں ڈالو: <b>چیکو اور آم کے باغ، نہر، سرسبز کھیت</b>۔</li>
+              <li data-i18n-html="b039">ایسی تصویریں سب کو پسند آتی ہیں کیونکہ یہ <b>ہماری اپنی</b> دنیا ہوتی ہے۔</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Pakistan ke ek haseen gaon ki tasveer banao: chiku aur aam ke bagh, saaf nehar ka pani, log khel rahe hon, peeche pahariyan, subah ki roshni, cartoon style.</p>
+              <p class="prompt-text" data-i18n="b041">Pakistan ke ek haseen gaon ki tasveer banao: chiku aur aam ke bagh, saaf nehar ka pani, log khel rahe hon, peeche pahariyan, subah ki roshni, cartoon style.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p3"><b>مشق</b>اپنی بنائی ہوئی ساکران کی تصویر گھر والوں کو دکھاؤ اور پوچھو: کیا یہ ہمارے گاؤں جیسی لگی؟</div>
+            <div class="practice p3" data-i18n-html="b040"><b>مشق</b>اپنی بنائی ہوئی ساکران کی تصویر گھر والوں کو دکھاؤ اور پوچھو: کیا یہ ہمارے گاؤں جیسی لگی؟</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -675,19 +730,23 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>ایک پیارا سا کردار سوچو — مثلاً ایک چھوٹا سا خرگوش، روبوٹ یا پرندہ — اور اس کی پوری تفصیل لکھو: رنگ، کپڑے، شکل۔</li>
-              <li>ہر نئی تصویر میں <b>وہی تفصیل</b> دوبارہ لکھو، تو کردار ہر بار ایک جیسا نظر آئے گا۔</li>
-              <li>یہی کردار آگے چل کر تمہاری <b>کہانی اور ویڈیو کا ہیرو</b> بنے گا!</li>
+              <li data-i18n-html="b042">ایک پیارا سا کردار سوچو — مثلاً ایک چھوٹا سا خرگوش، روبوٹ یا پرندہ — اور اس کی پوری تفصیل لکھو: رنگ، کپڑے، شکل۔</li>
+              <li data-i18n-html="b043">ہر نئی تصویر میں <b>وہی تفصیل</b> دوبارہ لکھو، تو کردار ہر بار ایک جیسا نظر آئے گا۔</li>
+              <li data-i18n-html="b044">یہی کردار آگے چل کر تمہاری <b>کہانی اور ویڈیو کا ہیرو</b> بنے گا!</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Ek chhota sa pyara sa robot character banao, neele rang ka, bari bari gol ankhein, sir par chhoti si topi, muskurata hua, cartoon style, safed background.</p>
+              <p class="prompt-text" data-i18n="b046">Ek chhota sa pyara sa robot character banao, neele rang ka, bari bari gol ankhein, sir par chhoti si topi, muskurata hua, cartoon style, safed background.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p3"><b>مشق</b>اپنے کردار کو دو الگ جگہوں پر بناؤ — ایک بار باغ میں، ایک بار اسکول میں — تفصیل بالکل ایک جیسی رکھنا۔</div>
+            <div class="practice p3" data-i18n-html="b045"><b>مشق</b>اپنے کردار کو دو الگ جگہوں پر بناؤ — ایک بار باغ میں، ایک بار اسکول میں — تفصیل بالکل ایک جیسی رکھنا۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
+        <div class="cert-box" id="certBox3" hidden>
+          <p data-i18n="cert_note">شاباش! اس لیول کے سارے سبق مکمل — اپنا سرٹیفکیٹ لو!</p>
+          <button class="cert-btn" type="button" data-cert="3" data-i18n="cert_btn">سرٹیفکیٹ دیکھو</button>
+        </div>
       </section>
 
       <!-- LEVEL 4 -->
@@ -709,16 +768,16 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li><b>Kling</b> اور <b>Hailuo</b> جیسے اوزار تصویر کو چھوٹی سی ویڈیو میں بدل دیتے ہیں۔</li>
-              <li>طریقہ: اپنی بنائی ہوئی تصویر اپ لوڈ کرو → لکھو کہ کیا حرکت چاہیے → ویڈیو تیار!</li>
-              <li>ایک سچی بات: کچھ ویڈیو اوزار ہر ملک میں دستیاب نہیں ہوتے۔ جو نہ ملے، اس کی جگہ نیچے والا CapCut والا طریقہ ہمیشہ چلتا ہے۔</li>
+              <li data-i18n-html="b047"><b>Kling</b> اور <b>Hailuo</b> جیسے اوزار تصویر کو چھوٹی سی ویڈیو میں بدل دیتے ہیں۔</li>
+              <li data-i18n-html="b048">طریقہ: اپنی بنائی ہوئی تصویر اپ لوڈ کرو → لکھو کہ کیا حرکت چاہیے → ویڈیو تیار!</li>
+              <li data-i18n-html="b049">ایک سچی بات: کچھ ویڈیو اوزار ہر ملک میں دستیاب نہیں ہوتے۔ جو نہ ملے، اس کی جگہ نیچے والا CapCut والا طریقہ ہمیشہ چلتا ہے۔</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label">حرکت والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">The robot waves its hand happily, flowers move in the soft wind, camera slowly moves closer, bright and cheerful.</p>
+              <p class="prompt-text" data-i18n="b051">The robot waves its hand happily, flowers move in the soft wind, camera slowly moves closer, bright and cheerful.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p4"><b>مشق</b>قدم ۳ والے اپنے کردار کی تصویر کو حرکت دے کر ۵ سیکنڈ کی پہلی ویڈیو بناؤ۔</div>
+            <div class="practice p4" data-i18n-html="b050"><b>مشق</b>قدم ۳ والے اپنے کردار کی تصویر کو حرکت دے کر ۵ سیکنڈ کی پہلی ویڈیو بناؤ۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -732,12 +791,12 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li><b>CapCut</b> ایک مفت ایپ ہے جو تقریباً ہر فون پر چلتی ہے۔</li>
-              <li>اس میں اپنی تصویریں اور چھوٹی ویڈیوز <b>ایک کے بعد ایک</b> جوڑو۔</li>
-              <li>تصویر پر <b>اینیمیشن</b> لگاؤ تو وہ خود ہلتی ہوئی لگے گی — یہ طریقہ ہمیشہ کام کرتا ہے۔</li>
-              <li>آخر میں ہلکی سی <b>موسیقی</b> اور چاہو تو اپنی <b>آواز</b> بھی ریکارڈ کر کے لگاؤ۔</li>
+              <li data-i18n-html="b052"><b>CapCut</b> ایک مفت ایپ ہے جو تقریباً ہر فون پر چلتی ہے۔</li>
+              <li data-i18n-html="b053">اس میں اپنی تصویریں اور چھوٹی ویڈیوز <b>ایک کے بعد ایک</b> جوڑو۔</li>
+              <li data-i18n-html="b054">تصویر پر <b>اینیمیشن</b> لگاؤ تو وہ خود ہلتی ہوئی لگے گی — یہ طریقہ ہمیشہ کام کرتا ہے۔</li>
+              <li data-i18n-html="b055">آخر میں ہلکی سی <b>موسیقی</b> اور چاہو تو اپنی <b>آواز</b> بھی ریکارڈ کر کے لگاؤ۔</li>
             </ul>
-            <div class="practice p4"><b>مشق</b>اپنی ۴ تصویریں CapCut میں جوڑو، ہر تصویر پر الگ اینیمیشن لگاؤ اور ایک موسیقی شامل کرو۔</div>
+            <div class="practice p4" data-i18n-html="b056"><b>مشق</b>اپنی ۴ تصویریں CapCut میں جوڑو، ہر تصویر پر الگ اینیمیشن لگاؤ اور ایک موسیقی شامل کرو۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -751,20 +810,24 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li><b>قدم ۱:</b> چھوٹی سی کہانی سوچو — شروع، درمیان، اور ایک اچھا سبق والا انجام۔</li>
-              <li><b>قدم ۲:</b> کہانی کے ہر حصے کی ایک تصویر بناؤ (قدم ۳ والا طریقہ)۔</li>
-              <li><b>قدم ۳:</b> تصویروں کو حرکت دو یا CapCut میں اینیمیشن لگاؤ۔</li>
-              <li><b>قدم ۴:</b> اپنی آواز میں کہانی سناؤ، موسیقی لگاؤ — ویڈیو تیار!</li>
+              <li data-i18n-html="b057"><b>قدم ۱:</b> چھوٹی سی کہانی سوچو — شروع، درمیان، اور ایک اچھا سبق والا انجام۔</li>
+              <li data-i18n-html="b058"><b>قدم ۲:</b> کہانی کے ہر حصے کی ایک تصویر بناؤ (قدم ۳ والا طریقہ)۔</li>
+              <li data-i18n-html="b059"><b>قدم ۳:</b> تصویروں کو حرکت دو یا CapCut میں اینیمیشن لگاؤ۔</li>
+              <li data-i18n-html="b060"><b>قدم ۴:</b> اپنی آواز میں کہانی سناؤ، موسیقی لگاؤ — ویڈیو تیار!</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label">کہانی مانگنے کا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Ek chhoti si kahani likho jisme ek pyasa kauwa ho, kahani ka ek acha sa sabaq bhi ho, aur kahani ko 4 chhote hisson mein tor kar do taake har hisse ki tasveer ban sakoon.</p>
+              <p class="prompt-text" data-i18n="b062">Ek chhoti si kahani likho jisme ek pyasa kauwa ho, kahani ka ek acha sa sabaq bhi ho, aur kahani ko 4 chhote hisson mein tor kar do taake har hisse ki tasveer ban sakoon.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p4"><b>مشق</b>یہی طریقہ استعمال کر کے اپنی پہلی مکمل کہانی ویڈیو بناؤ — چاہے وہ صرف ایک منٹ کی ہو!</div>
+            <div class="practice p4" data-i18n-html="b061"><b>مشق</b>یہی طریقہ استعمال کر کے اپنی پہلی مکمل کہانی ویڈیو بناؤ — چاہے وہ صرف ایک منٹ کی ہو!</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
+        <div class="cert-box" id="certBox4" hidden>
+          <p data-i18n="cert_note">شاباش! اس لیول کے سارے سبق مکمل — اپنا سرٹیفکیٹ لو!</p>
+          <button class="cert-btn" type="button" data-cert="4" data-i18n="cert_btn">سرٹیفکیٹ دیکھو</button>
+        </div>
       </section>
 
       <!-- LEVEL 5 -->
@@ -786,17 +849,17 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>مشکل سبق کو کہو: <b>«مجھے بالکل آسان الفاظ میں سمجھاؤ»</b> — فوراً آسان ہو جائے گا۔</li>
-              <li>ٹیسٹ سے پہلے AI سے <b>مشق کے سوالات</b> بنواؤ اور خود حل کرو۔</li>
-              <li>انگریزی کے نئے الفاظ روز سیکھو — مطلب، جملہ اور تلفظ کے ساتھ۔</li>
-              <li>یاد رکھو: ہوم ورک <b>سمجھنا</b> ہے، نقل کرنا نہیں۔ نقل سے تم کچھ نہیں سیکھو گے۔</li>
+              <li data-i18n-html="b063">مشکل سبق کو کہو: <b>«مجھے بالکل آسان الفاظ میں سمجھاؤ»</b> — فوراً آسان ہو جائے گا۔</li>
+              <li data-i18n-html="b064">ٹیسٹ سے پہلے AI سے <b>مشق کے سوالات</b> بنواؤ اور خود حل کرو۔</li>
+              <li data-i18n-html="b065">انگریزی کے نئے الفاظ روز سیکھو — مطلب، جملہ اور تلفظ کے ساتھ۔</li>
+              <li data-i18n-html="b066">یاد رکھو: ہوم ورک <b>سمجھنا</b> ہے، نقل کرنا نہیں۔ نقل سے تم کچھ نہیں سیکھو گے۔</li>
             </ul>
             <div class="prompt-box">
               <span class="prompt-label" data-i18n="prompt_label">مثال والا پرامپٹ — کاپی کر کے آزماؤ:</span>
-              <p class="prompt-text">Mujh se maths ke 5 sawal ek ek kar ke poochho. Main jawab dun to batao ke sahi hai ya galat, aur galat ho to pyar se samjhao. Jawab pehle se mat batao.</p>
+              <p class="prompt-text" data-i18n="b068">Mujh se maths ke 5 sawal ek ek kar ke poochho. Main jawab dun to batao ke sahi hai ya galat, aur galat ho to pyar se samjhao. Jawab pehle se mat batao.</p>
               <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
             </div>
-            <div class="practice p5"><b>مشق</b>AI سے اپنی کلاس کے کسی مشکل موضوع پر ۵ مشقی سوالات بنواؤ اور خود حل کرو۔</div>
+            <div class="practice p5" data-i18n-html="b067"><b>مشق</b>AI سے اپنی کلاس کے کسی مشکل موضوع پر ۵ مشقی سوالات بنواؤ اور خود حل کرو۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -810,11 +873,11 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>جو سیکھا، اس سے ایک <b>حقیقی چیز</b> بناؤ: اسکول کے لیے پوسٹر، اپنے گاؤں کی پریزنٹیشن، یا ایک کہانی ویڈیو۔</li>
-              <li><b>Canva</b> جیسی ایپ میں AI کی تصویریں لگا کر خوبصورت پوسٹر بنتا ہے۔</li>
-              <li>اپنا پروجیکٹ استاد اور دوستوں کو دکھاؤ — اچھا لگے تو اگلا پروجیکٹ اور بڑا رکھو۔</li>
+              <li data-i18n-html="b069">جو سیکھا، اس سے ایک <b>حقیقی چیز</b> بناؤ: اسکول کے لیے پوسٹر، اپنے گاؤں کی پریزنٹیشن، یا ایک کہانی ویڈیو۔</li>
+              <li data-i18n-html="b070"><b>Canva</b> جیسی ایپ میں AI کی تصویریں لگا کر خوبصورت پوسٹر بنتا ہے۔</li>
+              <li data-i18n-html="b071">اپنا پروجیکٹ استاد اور دوستوں کو دکھاؤ — اچھا لگے تو اگلا پروجیکٹ اور بڑا رکھو۔</li>
             </ul>
-            <div class="practice p5"><b>مشق</b>«میرا گاؤں ساکران» کے نام سے ایک پوسٹر یا ۵ تصویروں والی پریزنٹیشن بناؤ۔</div>
+            <div class="practice p5" data-i18n-html="b072"><b>مشق</b>«میرا گاؤں ساکران» کے نام سے ایک پوسٹر یا ۵ تصویروں والی پریزنٹیشن بناؤ۔</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
@@ -828,14 +891,18 @@
           </button>
           <div class="lesson-body">
             <ul>
-              <li>آج جو لوگ AI سیکھ رہے ہیں، کل وہ <b>ویڈیو بنانے والے، ڈیزائنر اور استاد</b> بنیں گے۔</li>
-              <li>لوگ AI سے ویڈیوز، تصویریں اور لکھائی کا کام کروا کر <b>روزگار</b> بھی کماتے ہیں — لیکن اس کی بنیاد ہمیشہ <b>محنت اور سچی مہارت</b> ہوتی ہے۔</li>
-              <li>جلدی امیر بنانے کے جھوٹے وعدوں سے بچو — جو چیز مفت میں «لاکھوں» کا وعدہ کرے، وہ اکثر جھوٹ ہوتی ہے۔</li>
+              <li data-i18n-html="b073">آج جو لوگ AI سیکھ رہے ہیں، کل وہ <b>ویڈیو بنانے والے، ڈیزائنر اور استاد</b> بنیں گے۔</li>
+              <li data-i18n-html="b074">لوگ AI سے ویڈیوز، تصویریں اور لکھائی کا کام کروا کر <b>روزگار</b> بھی کماتے ہیں — لیکن اس کی بنیاد ہمیشہ <b>محنت اور سچی مہارت</b> ہوتی ہے۔</li>
+              <li data-i18n-html="b075">جلدی امیر بنانے کے جھوٹے وعدوں سے بچو — جو چیز مفت میں «لاکھوں» کا وعدہ کرے، وہ اکثر جھوٹ ہوتی ہے۔</li>
             </ul>
-            <div class="practice p5"><b>مشق</b>سوچ کر لکھو: بڑے ہو کر تم AI سے کون سا کام کرنا چاہو گے؟ اپنے خواب کو ایک تصویر میں بھی بناؤ!</div>
+            <div class="practice p5" data-i18n-html="b076"><b>مشق</b>سوچ کر لکھو: بڑے ہو کر تم AI سے کون سا کام کرنا چاہو گے؟ اپنے خواب کو ایک تصویر میں بھی بناؤ!</div>
             <button class="done-btn" data-i18n="done_btn">میں نے یہ سیکھ لیا</button>
           </div>
         </article>
+        <div class="cert-box" id="certBox5" hidden>
+          <p data-i18n="cert_note">شاباش! اس لیول کے سارے سبق مکمل — اپنا سرٹیفکیٹ لو!</p>
+          <button class="cert-btn" type="button" data-cert="5" data-i18n="cert_btn">سرٹیفکیٹ دیکھو</button>
+        </div>
       </section>
 
       <!-- LEVEL 6 : ADVANCE DASHBOARD -->
@@ -851,81 +918,81 @@
           <article class="vip-card">
             <button class="vip-head" type="button" aria-expanded="false">
               <span class="vip-ico">🎯</span>
-              <span class="vip-titles"><b>ماہر پرامپٹ</b><span>لمبی تحریر، ترجمہ، خلاصہ</span></span>
+              <span class="vip-titles"><b data-i18n="b077">ماہر پرامپٹ</b><span data-i18n="b078">لمبی تحریر، ترجمہ، خلاصہ</span></span>
               <span class="vip-chev">⌄</span>
             </button>
             <div class="vip-body">
-              <p>AI کو رول + فارمیٹ + مثال دو، جواب کئی گنا بہتر ہوگا۔</p>
+              <p data-i18n="b079">AI کو رول + فارمیٹ + مثال دو، جواب کئی گنا بہتر ہوگا۔</p>
               <div class="prompt-box">
-                <span class="prompt-label">کاپی کر کے آزماؤ:</span>
-                <p class="prompt-text">Tum ek mahir ustaad ho. [Mozuo] par 300 lafzon ki aasan Urdu tehreer likho: shuru mein ek dilchasp sawal, akhir mein khulasa. Mushkil lafz aasan karo.</p>
+                <span class="prompt-label" data-i18n="b082">کاپی کر کے آزماؤ:</span>
+                <p class="prompt-text" data-i18n="b081">Tum ek mahir ustaad ho. [Mozuo] par 300 lafzon ki aasan Urdu tehreer likho: shuru mein ek dilchasp sawal, akhir mein khulasa. Mushkil lafz aasan karo.</p>
                 <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
               </div>
-              <div class="practice p1"><b>مشق</b>اپنے پسندیدہ موضوع پر لمبی تحریر لکھواؤ۔</div>
+              <div class="practice p1" data-i18n-html="b080"><b>مشق</b>اپنے پسندیدہ موضوع پر لمبی تحریر لکھواؤ۔</div>
             </div>
           </article>
           <article class="vip-card">
             <button class="vip-head" type="button" aria-expanded="false">
               <span class="vip-ico">🎬</span>
-              <span class="vip-titles"><b>لمبی کہانی ویڈیو</b><span>اسکرپٹ → سین → وائس اوور</span></span>
+              <span class="vip-titles"><b data-i18n="b083">لمبی کہانی ویڈیو</b><span data-i18n="b084">اسکرپٹ → سین → وائس اوور</span></span>
               <span class="vip-chev">⌄</span>
             </button>
             <div class="vip-body">
-              <p>پہلے کہانی، پھر ہر سین کی تصویر، پھر CapCut میں جوڑو + آواز۔</p>
+              <p data-i18n="b085">پہلے کہانی، پھر ہر سین کی تصویر، پھر CapCut میں جوڑو + آواز۔</p>
               <div class="prompt-box">
-                <span class="prompt-label">کاپی کر کے آزماؤ:</span>
-                <p class="prompt-text">Meri kahani ko 5 scenes mein tor do. Har scene ke liye: tasveer ka prompt, bolne ka text, aur kitne second ka scene.</p>
+                <span class="prompt-label" data-i18n="b088">کاپی کر کے آزماؤ:</span>
+                <p class="prompt-text" data-i18n="b087">Meri kahani ko 5 scenes mein tor do. Har scene ke liye: tasveer ka prompt, bolne ka text, aur kitne second ka scene.</p>
                 <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
               </div>
-              <div class="practice p2"><b>مشق</b>ایک منٹ کی کہانی ویڈیو بناؤ۔</div>
+              <div class="practice p2" data-i18n-html="b086"><b>مشق</b>ایک منٹ کی کہانی ویڈیو بناؤ۔</div>
             </div>
           </article>
           <article class="vip-card">
             <button class="vip-head" type="button" aria-expanded="false">
               <span class="vip-ico">📱</span>
-              <span class="vip-titles"><b>شارٹس + تھمب نیل</b><span>YouTube Shorts بنانا</span></span>
+              <span class="vip-titles"><b data-i18n="b089">شارٹس + تھمب نیل</b><span data-i18n="b090">YouTube Shorts بنانا</span></span>
               <span class="vip-chev">⌄</span>
             </button>
             <div class="vip-body">
-              <p>شارٹس میں پہلے 3 سیکنڈ سب سے اہم؛ تھمب نیل میں بڑا لفظ + صاف تصویر۔</p>
+              <p data-i18n="b091">شارٹس میں پہلے 3 سیکنڈ سب سے اہم؛ تھمب نیل میں بڑا لفظ + صاف تصویر۔</p>
               <div class="prompt-box">
-                <span class="prompt-label">کاپی کر کے آزماؤ:</span>
-                <p class="prompt-text">Mere video [mozua] ke liye 3 Shorts ideas do. Har idea mein pehle 3 second ka hook aur thumbnail par likhne ke liye 4 lafz.</p>
+                <span class="prompt-label" data-i18n="b094">کاپی کر کے آزماؤ:</span>
+                <p class="prompt-text" data-i18n="b093">Mere video [mozua] ke liye 3 Shorts ideas do. Har idea mein pehle 3 second ka hook aur thumbnail par likhne ke liye 4 lafz.</p>
                 <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
               </div>
-              <div class="practice p3"><b>مشق</b>اپنی ویڈیو کا تھمب نیل Canva میں بناؤ۔</div>
+              <div class="practice p3" data-i18n-html="b092"><b>مشق</b>اپنی ویڈیو کا تھمب نیل Canva میں بناؤ۔</div>
             </div>
           </article>
           <article class="vip-card">
             <button class="vip-head" type="button" aria-expanded="false">
               <span class="vip-ico">🎨</span>
-              <span class="vip-titles"><b>پوسٹر، لوگو، پریزنٹیشن</b><span>Canva سے ڈیزائن</span></span>
+              <span class="vip-titles"><b data-i18n="b095">پوسٹر، لوگو، پریزنٹیشن</b><span data-i18n="b096">Canva سے ڈیزائن</span></span>
               <span class="vip-chev">⌄</span>
             </button>
             <div class="vip-body">
-              <p>AI تصویر + بڑا عنوان + کم لفظ = اچھا پوسٹر۔</p>
+              <p data-i18n="b097">AI تصویر + بڑا عنوان + کم لفظ = اچھا پوسٹر۔</p>
               <div class="prompt-box">
-                <span class="prompt-label">کاپی کر کے آزماؤ:</span>
-                <p class="prompt-text">Ek saaf suthra poster ka design batao: unwan [X], rang navy aur safed, neeche chhota sa paigham, zyada lafz nahi.</p>
+                <span class="prompt-label" data-i18n="b100">کاپی کر کے آزماؤ:</span>
+                <p class="prompt-text" data-i18n="b099">Ek saaf suthra poster ka design batao: unwan [X], rang navy aur safed, neeche chhota sa paigham, zyada lafz nahi.</p>
                 <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
               </div>
-              <div class="practice p4"><b>مشق</b>اپنے گاؤں یا اسکول کا پوسٹر بناؤ۔</div>
+              <div class="practice p4" data-i18n-html="b098"><b>مشق</b>اپنے گاؤں یا اسکول کا پوسٹر بناؤ۔</div>
             </div>
           </article>
           <article class="vip-card">
             <button class="vip-head" type="button" aria-expanded="false">
               <span class="vip-ico">🛡️</span>
-              <span class="vip-titles"><b>جھوٹی خبر کی پہچان</b><span>فیک نیوز، ڈیپ فیک + پرائیویسی</span></span>
+              <span class="vip-titles"><b data-i18n="b101">جھوٹی خبر کی پہچان</b><span data-i18n="b102">فیک نیوز، ڈیپ فیک + پرائیویسی</span></span>
               <span class="vip-chev">⌄</span>
             </button>
             <div class="vip-body">
-              <p>ہر خبر کو 3 جگہ چیک کرو؛ اپنی معلومات (نام، پتہ، نمبر) AI کو کبھی نہ دو۔</p>
+              <p data-i18n="b103">ہر خبر کو 3 جگہ چیک کرو؛ اپنی معلومات (نام، پتہ، نمبر) AI کو کبھی نہ دو۔</p>
               <div class="prompt-box">
-                <span class="prompt-label">کاپی کر کے آزماؤ:</span>
-                <p class="prompt-text">Ye khabar sach hai ya jhoot? [Khabar yahan likho] — 3 nishaniyan batao jin se pata chale ke ye jhoot hai.</p>
+                <span class="prompt-label" data-i18n="b106">کاپی کر کے آزماؤ:</span>
+                <p class="prompt-text" data-i18n="b105">Ye khabar sach hai ya jhoot? [Khabar yahan likho] — 3 nishaniyan batao jin se pata chale ke ye jhoot hai.</p>
                 <button class="copy-btn" type="button" data-i18n="copy_btn">پرامپٹ کاپی کرو</button>
               </div>
-              <div class="practice p5"><b>مشق</b>ایک وائرل خبر کی 2 ذریعوں سے تصدیق کرو۔</div>
+              <div class="practice p5" data-i18n-html="b104"><b>مشق</b>ایک وائرل خبر کی 2 ذریعوں سے تصدیق کرو۔</div>
             </div>
           </article>
         </div>
@@ -933,6 +1000,10 @@
           <h3 data-i18n="news_h">🤖 AI کی تازہ خبریں — آٹو اپڈیٹ</h3>
           <p class="news-sub" data-i18n="news_sub">جب بھی ایپ کھولو گے، نئی خبریں خود آ جائیں گی۔</p>
           <div id="newsList"><p class="news-empty" data-i18n="news_loading">خبریں لوڈ ہو رہی ہیں…</p></div>
+        </div>
+        <div class="cert-box" id="certBoxAll" hidden>
+          <p data-i18n="cert_note_all">واہ! سارے سبق مکمل — پورے کورس کا سرٹیفکیٹ لو!</p>
+          <button class="cert-btn" type="button" data-cert="all" data-i18n="cert_btn">سرٹیفکیٹ دیکھو</button>
         </div>
       </section>
 
@@ -968,6 +1039,36 @@
           <li data-i18n-html="safety5">کوئی عجیب یا ڈراؤنی چیز نظر آئے تو فوراً بند کر کے گھر کے کسی بڑے یا استاد کو بتاؤ۔</li>
         </ul>
       </section>
+
+      <section class="parents" id="parents">
+        <h2 data-i18n="par_h">والدین اور استادوں کے لیے رہنمائی</h2>
+        <p class="sec-sub" data-i18n="par_sub">بچے AI سے کیسے محفوظ اور اچھا سیکھیں — چند آسان باتیں۔</p>
+        <ul>
+          <li data-i18n-html="par1">روز <b>20 سے 30 منٹ</b> کافی ہیں — لمبی اسکرین سے بچہ تھک جاتا ہے۔</li>
+          <li data-i18n-html="par2">پہلے ہفتے بچے کے <b>ساتھ بیٹھ کر</b> سبق کھولو، پھر وہ خود کر لے گا۔</li>
+          <li data-i18n-html="par3">بچے سے پوچھو: <b>"آج تم نے AI سے کیا بنایا؟"</b> — دکھانا سیکھنے کو پکا کرتا ہے۔</li>
+          <li data-i18n-html="par4">بچے کا <b>نام، پتہ، اسکول اور فون نمبر</b> AI کو کبھی نہ بتانے دو — یہ اصول سب سے پہلے سکھاؤ۔</li>
+          <li data-i18n-html="par5">ستارے (<b>★</b>) دیکھ کر حوصلہ دو — ہر سبق پر شاباش، غلطی پر ڈانٹ نہیں۔</li>
+          <li data-i18n-html="par6">ہفتے میں ایک دن بچے کا <b>پروجیکٹ</b> گھر والوں کو دکھاؤ — یہی اس کا امتحان ہے۔</li>
+        </ul>
+      </section>
+
+      <div class="cert-modal" id="certModal" hidden>
+        <div class="cert-card">
+          <div class="cert-top lat">Sakran AI</div>
+          <h3 data-i18n="cert_title">سرٹیفکیٹ — مکمل کرنے پر</h3>
+          <p class="cert-award" data-i18n="cert_award">یہ سرٹیفکیٹ دیا جاتا ہے</p>
+          <p class="cert-name" id="certNameText">—</p>
+          <input type="text" id="certName" class="no-print" autocomplete="off">
+          <p class="cert-level" id="certLevelText"></p>
+          <p class="cert-date" id="certDateText"></p>
+          <p class="cert-sign">Sakran AI — Waseem Ahmed</p>
+          <div class="cert-actions no-print">
+            <button type="button" id="certPrint" data-i18n="cert_print">پرنٹ کرو / PDF بناؤ</button>
+            <button type="button" id="certClose" data-i18n="cert_close">بند کرو</button>
+          </div>
+        </div>
+      </div>
 
       <footer>
         <div class="f-title">Sakran AI</div>
@@ -1022,7 +1123,55 @@
         lt4: 'How to make a good prompt?', lt5: 'The magic formula: who + what + how', lt6: "If you don't like the answer?",
         lt7: 'How to write a picture prompt?', lt8: 'A picture of our village Sakran', lt9: 'Make your own character',
         lt10: 'Video from a picture', lt11: 'Joining video in CapCut', lt12: 'Story video — the full method',
-        lt13: 'A super friend for studies', lt14: 'Make your small project', lt15: 'Working with AI when you grow up'
+        lt13: 'A super friend for studies', lt14: 'Make your small project', lt15: 'Working with AI when you grow up',
+        b011: 'Assalam o Alaikum! Tell me in simple English why the moon shines at night?',
+        b017: 'Write a beautiful 4-line poem about my village Sakran, with chiku and mango gardens in it.',
+        b027: 'You are a teacher. Explain the water cycle to a new learner in very easy English, with daily-life examples.',
+        b032: 'This answer looked hard to me. Explain it again in even easier words, with a small example.',
+        b037: 'Make a picture of a beautiful garden with mango trees, a flowing canal and colourful flowers, cartoon style, bright and cheerful.',
+        b041: 'Make a picture of a beautiful village of Pakistan: chiku and mango gardens, clean canal water, people playing, hills behind, morning light, cartoon style.',
+        b046: 'Make a small cute robot character, blue in colour, big round eyes, a small cap on its head, smiling, cartoon style, white background.',
+        b051: 'The robot waves its hand happily, flowers move in the soft wind, camera slowly moves closer, bright and cheerful.',
+        b062: 'Write a small story with a thirsty crow, with a good lesson in it, and split the story into 4 small parts so I can make a picture for each part.',
+        b068: 'Ask me 5 maths questions one by one. When I answer, tell me if it is right or wrong, and if wrong, explain kindly. Do not tell the answer beforehand.',
+        b077: 'Expert prompts',
+        b078: 'Long writing, translation, summary',
+        b079: 'Give AI a role + format + example, and the answer becomes many times better.',
+        b081: 'You are an expert teacher. Write a 300-word easy English essay on [Topic]: start with an interesting question, end with a summary. Make hard words easy.',
+        b082: 'Copy and try it:',
+        b083: 'Long story video',
+        b084: 'Script → scenes → voice-over',
+        b085: 'First the story, then a picture of each scene, then join in CapCut + voice.',
+        b087: 'Split my story into 5 scenes. For each scene: picture prompt, speaking text, and how many seconds the scene is.',
+        b088: 'Copy and try it:',
+        b089: 'Shorts + thumbnails',
+        b090: 'Making YouTube Shorts',
+        b091: 'In Shorts, the first 3 seconds matter most; in a thumbnail, a big word + a clear picture.',
+        b093: 'Give me 3 Shorts ideas for my video [topic]. In each idea, a hook for the first 3 seconds and 4 words to write on the thumbnail.',
+        b094: 'Copy and try it:',
+        b095: 'Posters, logos, presentations',
+        b096: 'Design with Canva',
+        b097: 'AI picture + big title + few words = a good poster.',
+        b099: 'Tell me a clean poster design: title [X], navy and white colours, a small message below, not too many words.',
+        b100: 'Copy and try it:',
+        b101: 'Spotting fake news',
+        b102: 'Fake news, deepfakes + privacy',
+        b103: 'Check every news in 3 places; never give your information (name, address, number) to AI.',
+        b105: 'Is this news true or false? [Write the news here] — tell 3 signs that show it is false.',
+        b106: 'Copy and try it:',
+        tip_title: 'Today\'s AI tip 💡',
+        search_clear: 'Clear',
+        cert_note: 'Well done! All lessons of this level are complete — get your certificate!',
+        cert_note_all: 'Wow! All lessons complete — get the full course certificate!',
+        cert_btn: 'See certificate',
+        cert_title: 'Certificate of Completion',
+        cert_award: 'This certificate is awarded to',
+        cert_print: 'Print / Save as PDF',
+        cert_close: 'Close',
+        wa_btn: 'Share on WhatsApp',
+        par_cta: 'For parents',
+        par_h: 'Guidance for parents and teachers',
+        par_sub: 'How children learn AI safely and well — a few simple points.',
       };
       var I18N_HTML_EN = {
         safety1: 'Never tell AI your <b>name, home address, school name or phone number</b>.',
@@ -1030,7 +1179,84 @@
         safety3: '<b>Understand</b> homework with AI, do not copy it — learning is your own work.',
         safety4: "Do not make anyone's picture or voice without permission, and do not forward fake news.",
         safety5: 'If you see something strange or scary, close it at once and tell an elder at home or a teacher.',
-        tiktok_txt: 'Follow us on TikTok — <span class="tk-handle">@greensakran2</span>'
+        tiktok_txt: 'Follow us on TikTok — <span class="tk-handle">@greensakran2</span>',
+        b001: '<b>AI</b> means "artificial intelligence".',
+        b002: 'It is a computer program that <b>understands</b> what humans say and <b>answers</b> them.',
+        b003: 'It has learned by reading millions of books and websites, so it knows a lot.',
+        b004: 'But remember: AI is <b>not</b> a human. It has no heart, and sometimes it can make a <b>mistake</b> too.',
+        b005: '<b>Practice</b> Tell your family in your own words what AI is — as if you have become the teacher!',
+        b006: 'Open an AI app like <b>ChatGPT</b> or <b>Gemini</b> on the phone.',
+        b007: 'Write your question in the writing box below and send it — that is it! This is the start of the chat.',
+        b008: 'What you write to AI is called a <b>"prompt"</b>.',
+        b009: 'Write politely or playfully — AI answers in every style.',
+        b010: '<b>Practice</b> Send this prompt to AI, then make one more question yourself — for example about your favourite fruit.',
+        b012: 'It can write <b>stories and poems</b> — just tell it the topic.',
+        b013: 'It can <b>explain homework</b> — a hard question in easy words.',
+        b014: 'It can <b>translate</b> — from Urdu to English, English to Urdu.',
+        b015: 'It can also make a <b>picture</b> — you will learn this in step 3!',
+        b016: '<b>Practice</b> Ask AI to write a poem about your village, write it neatly in your copy and show it to your teacher.',
+        b018: '<b>Weak prompt:</b> "Write a story" — AI will not understand what kind of story you want.',
+        b019: '<b>Strong prompt:</b> "Write a fun story of a little bird learning to fly, in easy English, only 5 sentences."',
+        b020: 'See the difference? A strong prompt has <b>topic + style + length</b> all clear.',
+        b021: '<b>Practice</b> Make the weak "write a poem" prompt strong yourself, then send it to AI and see the result.',
+        b022: '<b>Who:</b> Give AI a character — "You are a teacher…"',
+        b023: '<b>What:</b> Tell the work clearly — "…explain the water cycle to me…"',
+        b024: '<b>How:</b> Tell the style — "…in very easy English, with examples, as if I am a brand-new learner."',
+        b025: 'When these three things come together, the answer is always wonderful.',
+        b026: '<b>Practice</b> Make your own prompt with this formula — keep the character "poet" and ask for a poem about your school.',
+        b028: 'No need to worry — just write next: <b>"tell it even easier"</b> or <b>"make it shorter"</b>.',
+        b029: 'If an answer looks wrong, <b>ask again</b>, or check with a teacher or book.',
+        b030: 'Talking with AI keeps going — you can improve the same thing many times.',
+        b031: '<b>Practice</b> Say "even easier" three times to any answer and see how simple it becomes.',
+        b033: 'In a picture prompt, tell <b>four things</b>: what it is, where it is, which colours, and which style (cartoon or real-like).',
+        b034: 'The more detail, the more beautiful the picture.',
+        b035: 'Picture-making tools: <b>ChatGPT, Gemini</b> and <b>Microsoft Image Creator</b> — many are free.',
+        b036: '<b>Practice</b> Use this prompt, then change one thing in it (for example "night scene") and make a new picture.',
+        b038: 'Put things around you in the prompt: <b>chiku and mango gardens, canal, green fields</b>.',
+        b039: 'Everyone likes such pictures because they are <b>our own</b> world.',
+        b040: '<b>Practice</b> Show your Sakran picture to your family and ask: did it look like our village?',
+        b042: 'Think of a lovely character — for example a little rabbit, robot or bird — and write its full detail: colour, clothes, face.',
+        b043: 'In every new picture, write <b>the same detail</b> again, so the character looks the same every time.',
+        b044: 'This same character will later become the <b>hero of your story and video</b>!',
+        b045: '<b>Practice</b> Make your character in two different places — once in a garden, once in a school — keeping the detail exactly the same.',
+        b047: 'Tools like <b>Kling</b> and <b>Hailuo</b> turn a picture into a small video.',
+        b048: 'Method: upload your picture → write what movement you want → video ready!',
+        b049: 'One true thing: some video tools are not available in every country. If you cannot find one, the CapCut method below always works.',
+        b050: '<b>Practice</b> Give movement to your step 3 character picture and make your first 5-second video.',
+        b052: '<b>CapCut</b> is a free app that runs on almost every phone.',
+        b053: 'In it, join your pictures and small videos <b>one after another</b>.',
+        b054: 'Put <b>animation</b> on a picture and it will look like it is moving on its own — this method always works.',
+        b055: 'In the end, add light <b>music</b> and, if you want, record your own <b>voice</b> too.',
+        b056: '<b>Practice</b> Join your 4 pictures in CapCut, put a different animation on each picture and add one music.',
+        b057: '<b>Step 1:</b> Think of a small story — a start, a middle, and a good ending with a lesson.',
+        b058: '<b>Step 2:</b> Make one picture for each part of the story (the step 3 method).',
+        b059: '<b>Step 3:</b> Give movement to the pictures or put animation in CapCut.',
+        b060: '<b>Step 4:</b> Tell the story in your own voice, add music — video ready!',
+        b061: '<b>Practice</b> Use this method to make your first complete story video — even if it is only one minute!',
+        b063: 'Say to a hard lesson: <b>"Explain it to me in very easy words"</b> — it will become easy at once.',
+        b064: 'Before a test, get AI to make <b>practice questions</b> and solve them yourself.',
+        b065: 'Learn new English words every day — meaning, sentence and pronunciation together.',
+        b066: 'Remember: homework is to be <b>understood</b>, not copied. Copying teaches you nothing.',
+        b067: '<b>Practice</b> Get AI to make 5 practice questions on a hard topic of your class and solve them yourself.',
+        b069: 'From what you learned, make a <b>real thing</b>: a poster for school, a presentation of your village, or a story video.',
+        b070: 'In an app like <b>Canva</b>, a beautiful poster is made by putting AI pictures in it.',
+        b071: 'Show your project to your teacher and friends — if they like it, make the next project even bigger.',
+        b072: '<b>Practice</b> Make a poster or a 5-picture presentation named "My village Sakran".',
+        b073: 'People learning AI today will tomorrow become <b>video makers, designers and teachers</b>.',
+        b074: 'People also earn a <b>living</b> by getting AI to do video, picture and writing work — but its base is always <b>hard work and true skill</b>.',
+        b075: 'Beware of false promises of getting rich quickly — what promises "millions" for free is usually a lie.',
+        b076: '<b>Practice</b> Think and write: when you grow up, what work would you like to do with AI? Also make your dream into a picture!',
+        b080: '<b>Practice</b> Get a long piece of writing made on your favourite topic.',
+        b086: '<b>Practice</b> Make a one-minute story video.',
+        b092: '<b>Practice</b> Make your video thumbnail in Canva.',
+        b098: '<b>Practice</b> Make a poster of your village or school.',
+        b104: '<b>Practice</b> Verify one viral news from 2 sources.',
+        par1: 'Just <b>20 to 30 minutes</b> a day are enough — a long screen tires a child.',
+        par2: 'In the first week, open lessons <b>sitting with</b> the child, then he will manage on his own.',
+        par3: 'Ask the child: <b>"What did you make with AI today?"</b> — showing makes learning firm.',
+        par4: 'Never let the child tell AI his <b>name, address, school or phone number</b> — teach this rule first.',
+        par5: 'Encourage by looking at the stars (<b>★</b>) — praise for every lesson, no scolding for mistakes.',
+        par6: 'One day a week, show the child\'s <b>project</b> to the family — that is his real test.',
       };
       var QUIZ_EN = [
         { q: 'What does AI mean?', opts: ['Artificial intelligence — a computer that understands and answers', 'A real human who lives in the phone', 'A toy robot'], right: 0 },
@@ -1075,6 +1301,15 @@
           b.classList.toggle('is-active', on);
           b.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
+        var wa = document.getElementById('waShare');
+        if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(WA_TXT[lang]);
+        var si = document.getElementById('searchInput');
+        if (si) si.placeholder = SEARCH_PH[lang];
+        var cn = document.getElementById('certName');
+        if (cn) cn.placeholder = CERT_NAME_PH[lang];
+        var th2 = document.getElementById('themeToggle');
+        if (th2) th2.textContent = THEME_TXT[lang][document.body.classList.contains('dark') ? 1 : 0];
+        renderTip();
       }
       document.querySelectorAll('.lang-btn').forEach(function (b) {
         b.addEventListener('click', function () {
@@ -1315,6 +1550,146 @@
           showMsg('خبریں لوڈ نہیں ہو سکیں — انٹرنیٹ چیک کر کے صفحہ دوبارہ کھولو۔');
         });
       })();
+
+
+      // ---------- Theme (dark mode) ----------
+      var THEME_TXT = { ur: ['🌙 ڈارک موڈ', '☀️ لائٹ موڈ'], en: ['🌙 Dark mode', '☀️ Light mode'] };
+      function applyTheme(dark) {
+        document.body.classList.toggle('dark', dark);
+        var th = document.getElementById('themeToggle');
+        if (th) { th.textContent = THEME_TXT[curLang][dark ? 1 : 0]; th.setAttribute('aria-pressed', dark ? 'true' : 'false'); }
+        try { localStorage.setItem('sakran-theme', dark ? 'dark' : 'light'); } catch (e) {}
+      }
+      var themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) themeToggle.addEventListener('click', function () { applyTheme(!document.body.classList.contains('dark')); });
+      try { if (localStorage.getItem('sakran-theme') === 'dark') document.body.classList.add('dark'); } catch (e) {}
+
+      // ---------- Daily AI tip (rotates every day) ----------
+      var TIPS = [
+        {ur: "AI سے سوال پوچھنے سے پہلے سوچو: تمہیں جواب کس انداز میں چاہیے؟", en: "Before asking AI a question, think: in what style do you want the answer?"},
+        {ur: "پرامپٹ میں مثال دے دو، جواب کئی گنا بہتر ہوگا۔", en: "Give an example in your prompt, and the answer becomes much better."},
+        {ur: "AI کی بنائی تصویر کو ہمیشہ غور سے دیکھو — کبھی کبھی ہاتھ یا لفظ غلط بن جاتے ہیں۔", en: "Always look carefully at an AI-made picture — sometimes hands or words come out wrong."},
+        {ur: "ایک ہی سوال دو طرح سے پوچھ کر دیکھو، جواب کا فرق سمجھ آئے گا۔", en: "Try asking the same question two ways, and you will see how the answer changes."},
+        {ur: "اپنی ذاتی معلومات (نام، پتہ، نمبر) AI کو کبھی مت بتاؤ۔", en: "Never tell AI your personal information (name, address, number)."},
+        {ur: "مشکل لفظ آئے تو کہو: \"اس لفظ کو آسان مثال سے سمجھاؤ\"۔", en: "If a hard word comes, say: \"Explain this word with an easy example.\""},
+        {ur: "AI سے کہانی لکھواؤ، پھر اسے اپنی زبان میں دوبارہ سناؤ — یہی اصلی سیکھنا ہے۔", en: "Get AI to write a story, then retell it in your own words — that is real learning."},
+        {ur: "تصویر کے پرامپٹ میں رنگ، جگہ اور انداز تینوں لکھو۔", en: "In a picture prompt, write colour, place and style — all three."},
+        {ur: "ہر خبر کو 3 جگہ چیک کرو، پھر یقین کرو۔", en: "Check every news in 3 places, then believe it."},
+        {ur: "AI کو استاد بناؤ، نوکر نہیں — پہلے خود سوچو، پھر اس سے مدد لو۔", en: "Make AI your teacher, not your servant — first think yourself, then take its help."},
+        {ur: "چھوٹی چھوٹی مشق روز کرو، ایک دن میں سب کچھ نہیں سیکھا جاتا۔", en: "Practise a little every day — everything cannot be learned in one day."},
+        {ur: "اپنے کردار کی تفصیل ہر تصویر میں ایک جیسی رکھو، کردار ایک جیسا نظر آئے گا۔", en: "Keep your character detail the same in every picture, and the character will look the same."},
+        {ur: "ویڈیو کے پہلے 3 سیکنڈ میں ہی دیکھنے والے کو روکنا ہوتا ہے۔", en: "In a video, you must stop the viewer in the first 3 seconds."},
+        {ur: "غلط جواب ملے تو گھبراؤ نہیں — \"دوبارہ آسان کر کے بتاؤ\" لکھ دو۔", en: "If you get a wrong answer, do not worry — just write \"tell it again, easier.\""},
+        {ur: "AI سے انگریزی کے 5 نئے لفظ روز سیکھو، جملے کے ساتھ۔", en: "Learn 5 new English words from AI every day, with a sentence."},
+        {ur: "کسی کی تصویر یا آواز بغیر اجازت کے مت بناؤ۔", en: "Do not make anyone's picture or voice without permission."},
+        {ur: "ہوم ورک AI سے سمجھو، نقل مت کرو۔", en: "Understand homework with AI, do not copy it."},
+        {ur: "پرامپٹ لمبا نہیں، صاف ہونا چاہیے۔", en: "A prompt should not be long, it should be clear."},
+        {ur: "اپنی بنائی چیز استاد کو دکھاؤ — رائے سے سیکھنا تیز ہوتا ہے۔", en: "Show what you made to your teacher — learning from feedback is faster."},
+        {ur: "AI کو کردار دو: \"تم ایک شاعر ہو\" — جواب کا انداز بدل جائے گا۔", en: "Give AI a character: \"You are a poet\" — the style of the answer will change."},
+        {ur: "تصویر بنانے سے پہلے کاغذ پر خاکہ سوچ لو۔", en: "Before making a picture, imagine the sketch on paper first."},
+        {ur: "ایک دن میں ایک نیا اوزار آزماؤ — ChatGPT، Gemini، Canva، CapCut۔", en: "Try one new tool a day — ChatGPT, Gemini, Canva, CapCut."},
+        {ur: "ویڈیو میں اپنی آواز لگاؤ، ویڈیو اپنی لگے گی۔", en: "Put your own voice in the video, and the video will feel yours."},
+        {ur: "AI ہر جواب میں سچا نہیں ہوتا — اہم بات کتاب سے ملاؤ۔", en: "AI is not truthful in every answer — match important things with a book."},
+        {ur: "سوال میں لمبائی بھی لکھو: \"صرف 5 جملے\"۔", en: "Also write the length in your question: \"only 5 sentences.\""},
+        {ur: "اپنے گاؤں کی چیزوں پر پرامپٹ لکھو، تصویریں اپنی لگیں گی۔", en: "Write prompts about your village things, and the pictures will feel yours."},
+        {ur: "ٹیسٹ سے پہلے AI سے مشقی سوالات بنواؤ۔", en: "Before a test, get practice questions made from AI."},
+        {ur: "اچھا تھمب نیل = بڑا لفظ + صاف تصویر + کم لفظ۔", en: "A good thumbnail = big word + clear picture + few words."},
+        {ur: "روز ایک چھوٹا پروجیکٹ سوچو، ہفتے میں ایک بناؤ۔", en: "Think of a small project every day, make one every week."},
+        {ur: "سیکھنا رکنا نہیں چاہیے — آج کا سبق، کل کی مہارت ہے۔", en: "Learning must never stop — today's lesson is tomorrow's skill."}
+      ];
+      function renderTip() {
+        var t = document.getElementById('tipText');
+        if (!t) return;
+        var now = new Date();
+        var start = new Date(now.getFullYear(), 0, 0);
+        var day = Math.floor((now - start) / 86400000);
+        t.textContent = TIPS[day % TIPS.length][curLang];
+      }
+
+      // ---------- WhatsApp share + placeholders ----------
+      var WA_TXT = { ur: 'Sakran AI se Urdu mein AI seekho! https://waseemhassni.github.io/sakran-ai/', en: 'Learn AI with Sakran AI! https://waseemhassni.github.io/sakran-ai/' };
+      var SEARCH_PH = { ur: 'سبق تلاش کرو… مثلاً ویڈیو، تصویر، پرامپٹ', en: 'Search lessons… e.g. video, picture, prompt' };
+      var CERT_NAME_PH = { ur: 'اپنا نام لکھو', en: 'Write your name' };
+      var CERT_DATE_PRE = { ur: 'تاریخ: ', en: 'Date: ' };
+      var CERT_ALL = { ur: 'پورا کورس — سارے لیول', en: 'Full course — all levels' };
+
+      // ---------- Search (lessons + VIP cards) ----------
+      var searchInput = document.getElementById('searchInput');
+      var searchNote = document.getElementById('searchNote');
+      var searchClear = document.getElementById('searchClear');
+      function runSearch() {
+        if (!searchInput) return;
+        var q = searchInput.value.trim().toLowerCase();
+        var count = 0;
+        document.querySelectorAll('.lesson').forEach(function (lesson) {
+          var hit = !q || lesson.textContent.toLowerCase().indexOf(q) >= 0;
+          lesson.style.display = hit ? '' : 'none';
+          if (hit && q) { lesson.classList.add('open'); lesson.querySelector('.lesson-head').setAttribute('aria-expanded', 'true'); count++; }
+        });
+        document.querySelectorAll('.vip-card').forEach(function (card) {
+          var hit = !q || card.textContent.toLowerCase().indexOf(q) >= 0;
+          card.style.display = hit ? '' : 'none';
+          if (hit && q) { card.classList.add('open'); card.querySelector('.vip-head').setAttribute('aria-expanded', 'true'); count++; }
+        });
+        if (!searchNote) return;
+        if (!q) { searchNote.textContent = ''; }
+        else if (count === 0) { searchNote.textContent = curLang === 'en' ? 'No lesson found — try another word.' : 'کوئی سبق نہیں ملا — دوسرا لفظ آزماؤ۔'; }
+        else { searchNote.textContent = curLang === 'en' ? count + ' lessons found.' : count + ' سبق ملے۔'; }
+      }
+      if (searchInput) searchInput.addEventListener('input', runSearch);
+      if (searchClear) searchClear.addEventListener('click', function () { if (searchInput) searchInput.value = ''; runSearch(); });
+
+      // ---------- Certificates ----------
+      function updateCerts() {
+        for (var n = 1; n <= 5; n++) {
+          var sec = document.getElementById('level' + n);
+          var box = document.getElementById('certBox' + n);
+          if (!sec || !box) continue;
+          var lessons = sec.querySelectorAll('.lesson');
+          var done = sec.querySelectorAll('.lesson.done').length;
+          box.hidden = !(lessons.length && done === lessons.length);
+        }
+        var boxAll = document.getElementById('certBoxAll');
+        if (boxAll) boxAll.hidden = !(total && document.querySelectorAll('.lesson.done').length === total);
+      }
+      var _updateProgressOrig = updateProgress;
+      updateProgress = function () { _updateProgressOrig(); updateCerts(); };
+      var certModal = document.getElementById('certModal');
+      document.querySelectorAll('.cert-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var n = btn.getAttribute('data-cert');
+          var lvl = '';
+          if (n === 'all') { lvl = CERT_ALL[curLang]; }
+          else { var h = document.querySelector('#level' + n + ' .level-banner h2'); lvl = h ? h.textContent : ''; }
+          var lt = document.getElementById('certLevelText');
+          if (lt) lt.textContent = lvl;
+          var d = new Date();
+          var ds = ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + d.getFullYear();
+          var dt = document.getElementById('certDateText');
+          if (dt) dt.textContent = CERT_DATE_PRE[curLang] + ds;
+          var saved = '';
+          try { saved = localStorage.getItem('sakran-name') || ''; } catch (e) {}
+          var inp = document.getElementById('certName');
+          var nm = document.getElementById('certNameText');
+          if (inp) inp.value = saved;
+          if (nm) nm.textContent = saved || '—';
+          if (certModal) certModal.hidden = false;
+        });
+      });
+      var certNameInput = document.getElementById('certName');
+      if (certNameInput) certNameInput.addEventListener('input', function () {
+        var nm = document.getElementById('certNameText');
+        if (nm) nm.textContent = certNameInput.value.trim() || '—';
+      });
+      var certPrint = document.getElementById('certPrint');
+      if (certPrint) certPrint.addEventListener('click', function () {
+        try { localStorage.setItem('sakran-name', (certNameInput ? certNameInput.value.trim() : '')); } catch (e) {}
+        window.print();
+      });
+      var certClose = document.getElementById('certClose');
+      if (certClose) certClose.addEventListener('click', function () { if (certModal) certModal.hidden = true; });
+      if (certModal) certModal.addEventListener('click', function (ev) { if (ev.target === certModal) certModal.hidden = true; });
+      updateCerts();
 
       renderQuiz();
       applyLang(curLang);
